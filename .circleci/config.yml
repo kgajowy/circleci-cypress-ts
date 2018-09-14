@@ -31,10 +31,12 @@ jobs:
     - save_cache:
         paths:
         - node_modules
+        - ~/.npm
+        - ~/.cache
         key: v1-dependencies-{{ checksum "package.json" }}
 
     # run tests!
     - run: yarn test
-    - run: npx cypress run
+    - run: yarn test:e2e
 
 
