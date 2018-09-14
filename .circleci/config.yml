@@ -35,9 +35,14 @@ jobs:
         key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum ".circleci/config.yml" }}
 
     - run: yarn run start
+      background: true
+      name: Running the app in background
 
     # run tests!
     - run: yarn test
+      name: Running Unit Tests
+
     - run: yarn test:e2e
+      name: Running E2E Test
 
 
