@@ -4,8 +4,6 @@
  * Base Routing
  * Clicking on elements/flows
  * viewports testing forEach
- * CI with artifacts?
- * CircleCI workflows (separate jest & cypress)
  * some tests with inputs
  * some tests with neat features of cy
  *

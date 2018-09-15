@@ -49,6 +49,10 @@ jobs:
         name: Running E2E Test
 
     - store_artifacts:
-        path: ./cypress
-        destination: .
+        path: ./cypress/videos
+        destination: ./videos
+
+    - store_artifacts:
+        path: ./cypress/screenshots
+        destination: ./failures
 
