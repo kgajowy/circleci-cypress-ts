@@ -34,15 +34,25 @@ jobs:
         - ~/.cache
         key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum ".circleci/config.yml" }}
 
-    - run: yarn run start
+    - run:
+        name: Launching App on localhost
+        command: yarn run start
         background: true
-        name: Running the app in background
 
     # run tests!
-    - run: yarn test
+    - run:
+        command: yarn test
         name: Running Unit Tests
 
-    - run: yarn test:e2e
+    - run:
+        command: yarn test:e2e
         name: Running E2E Test
 
+    - store_artifacts:
+        path: ./cypress/videos
+        destination: ./videos
+
+    - store_artifacts:
+        path: ./cypress/screenshots
+        destination: ./failures
 
