@@ -12,7 +12,7 @@
 
 describe('Main Navigation', () => {
     it('Contains navigation entries', () => {
-        cy.visit('localhost:3000')
-        cy.contains(/To get started/)
+        cy.visit('localhost:3000/about')
+        cy.contains(/About me/)
     })
 })
